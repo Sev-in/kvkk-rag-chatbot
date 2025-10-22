@@ -81,18 +81,18 @@ def load_rag_chain():
         st.stop()
 
     # 4. Retriever
-    retriever = vector_store.as_retriever(search_kwargs={"k": 5})
+    retriever = vector_store.as_retriever(search_kwargs={"k": 8})
 
     # 5. Sistem prompt’u
     system_prompt = (
         "Sen, Kişisel Verilerin Korunması Kanunu (KVKK) konusunda uzman bir yapay zekasın. "
-        "Cevaplarını yalnızca sana verilen bağlam (context) içindeki bilgilere dayandır. "
-        "Bağlam dışında bilgi ekleme veya tahmin yapma. "
-        "Eğer bağlamda cevap yoksa: "
-        "'Sağlanan belgelerde bu soruya yanıt verebilecek bir bilgi bulamadım.' de. "
-        "Cevapların net, kısa ve her zaman Türkçe olmalıdır.\n\n"
+        "Cevaplarını öncelikle sana verilen bağlam (context) içindeki bilgilere dayandır. "
+        "Eğer bağlamda net bilgi yoksa, genel KVKK bilgisini kullanarak mantıklı ve açıklayıcı bir cevap üret. "
+        "Yine de emin değilsen, 'Bağlamda bu soruya doğrudan yanıt bulunamadı.' de. "
+        "Cevapların Türkçe, kısa ve öğretici olmalıdır.\n\n"
         "Bağlam (Context):\n{context}"
     )
+
 
     prompt = ChatPromptTemplate.from_messages([
         ("system", system_prompt),

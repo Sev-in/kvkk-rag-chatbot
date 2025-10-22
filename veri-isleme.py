@@ -84,7 +84,7 @@ def pdfleri_isle_ve_kaydet(ana_klasor: str, strateji: str = "hi_res"):
 
             # Fazla uzun metinleri küçük parçalara bölelim
             kelimeler = temiz_metin.split()
-            chunk_size = 500
+            chunk_size = 1000
             chunks = [" ".join(kelimeler[i:i+chunk_size]) for i in range(0, len(kelimeler), chunk_size)]
 
             for ch in chunks:
@@ -102,6 +102,8 @@ def pdfleri_isle_ve_kaydet(ana_klasor: str, strateji: str = "hi_res"):
             continue
 
     print(f"✅ Tüm PDF'ler işlendi ve '{CHROMA_DIR}' altına kaydedildi.")
+    print(temiz_metin[:1000])
+
 
 # ---------- ANA ÇALIŞTIRMA ----------
 if __name__ == "__main__":
