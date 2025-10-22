@@ -47,27 +47,41 @@ cd kvkk-rag-chatbot
 
 ### 2️⃣ Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 ### 3️⃣ Configure environment
 
 Create a .env file in the project root:
+
+```bash
 GOOGLE_API_KEY=your_google_api_key_here
+```
 
 ### 4️⃣ Create the vector database
 
 (Only required the first time or after data/model changes)
+
+```bash
 python veri_isleme.py
+```
 
 ### 5️⃣ Start the app
 
+```bash
 streamlit run app.py
+```
 
+## 📁 Project Structure
+
+```text
 kvkk-rag-chatbot/
-├── kvkk_veri_seti/ # PDF dataset (official KVKK documents)
-├── chroma_db_kvkk/ # Persisted vector database (auto-created)
-├── app.py # Streamlit app + RAG pipeline
-├── veri_isleme.py # PDF processing + embedding + storage
-├── requirements.txt # Dependencies
-├── .env # GOOGLE_API_KEY (not committed)
-└── README.md # Project documentation
+├── kvkk_veri_seti/             # PDF dataset (official KVKK documents)
+├── chroma_db_kvkk/             # Persisted vector database (auto-created)
+├── app.py                      # Streamlit app + RAG pipeline
+├── veri_isleme.py              # PDF processing + embedding + storage
+├── requirements.txt            # Dependencies
+├── .env                        # GOOGLE_API_KEY (not committed)
+└── README.md                   # Project documentation
+```
