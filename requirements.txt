@@ -1,0 +1,15 @@
+﻿python-dotenv
+google-generativeai
+langchain-google-genai
+langchain
+langchain-core
+langchain-community
+langchain-chroma
+langchain-text-splitters
+sentence-transformers
+unstructured[pdf]
+pdf2image
+pytesseract
+tqdm
+langchain-huggingface
+streamlit
