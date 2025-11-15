@@ -128,7 +128,4 @@ python veri_isleme.py
 streamlit run app.py
 ```
 
-## 🌐 Canlı Uygulama
 
-Projenin canlı versiyonuna buradan ulaşabilirsiniz:  
-👉 [KVKK RAG Chatbot](https://kvkk-rag-chatbot-huda7val778qvevuxvmjpj.streamlit.app/)
